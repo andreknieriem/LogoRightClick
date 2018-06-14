@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html class='demo3'>
+<head>
+	<meta charset='UTF-8'><meta name="robots" content="noindex">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<title>Rightlick on Logo to show logo download options</title>
+	<link href="bootstrap.min.css" type="text/css" rel="stylesheet"/>
+	<link href="demo.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+	<div class="back-navi">
+	<a title="Back to Article" href="https://www.andrerinas.de/playground/rechtsklick-auf-logo-um-download-optionen-zu-oeffnen.html">
+		<i class="icon-back"></i>
+	</a>
+	/
+	<a title="Back to Playground" href="https://www.andrerinas.de/playground.html">
+		<i class="icon-playground"></i>
+	</a>
+	</div>
+	<div class="demo-navigation">
+		<h1>Rightlick on Logo to show logo download options</h1>
+		<a title="See Demo no. 1" href="index.html">Vanilla Js</a>
+		/
+		<a title="See Demo no. 2" href="jquery.html">jQuery</a>
+		/
+		<a title="See Demo no. 3" class="active" href="bootstrap.html">Bootstrap</a>
+	</div>
+	<a title="Go to Homepage" href="https://www.andrerinas.de" class="arlogo">Logo</a>
+</header>
+
+<img id="logo" class="center-block" src="img/logo.png" />
+
+<div class="container blokk">
+	<h2 class="text-center">Lorem</h2>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>Lorem ipsum</h3>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonos et accusam et justo duo dolores et ea rebum.
+		</div>
+		<div class="col-md-4">
+			<h3>Lorem ipsum dolor</h3>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonAt vero eos et accusam et justo duo dolores et ea rebum.
+		</div>
+		<div class="col-md-4">
+			<h3>Lorem dolor sit</h3>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non justo duo dolores et ea rebum.
+		</div>
+	</div>
+</div>
+<div class="container blokk">
+	<h2 class="text-center">Lorem</h2>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>Lorem ipsum</h3>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonos et accusam et justo duo dolores et ea rebum.
+		</div>
+		<div class="col-md-4">
+			<h3>Lorem ipsum dolor</h3>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonAt vero eos et accusam et justo duo dolores et ea rebum.
+		</div>
+		<div class="col-md-4">
+			<h3>Lorem dolor sit</h3>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non justo duo dolores et ea rebum.
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="exampleModalLabel">Download our logo?</h4>
+		</div>
+		<div class="modal-body">
+		<p>Here is a <a href="#0">.zip you can download</a>.</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+;( function( $, window, document, undefined )
+{
+	'use strict';
+
+$.fn.rightclickLogo = function( options ){
+	var options = $.extend({
+		modalSector: '#exampleModal'
+	});
+	this.on('contextmenu', function(e){
+		e.preventDefault();
+		$(options.modalSector).modal();
+	});
+}
+})( jQuery, window, document );
+
+$('#logo').rightclickLogo();
+</script>
+</body></html>
